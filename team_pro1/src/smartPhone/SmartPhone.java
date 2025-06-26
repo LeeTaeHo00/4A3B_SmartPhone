@@ -8,7 +8,7 @@ public class SmartPhone {
 	String ownerName;
 	
 	// 필드 (클래스 목록)
-	//App app; //--> 만드는분
+	App app; //--> 만드는분
 	Battery battery;
 	//Message msg;
 	Power power;
@@ -20,7 +20,7 @@ public class SmartPhone {
 		this.model = "테스트";
 		this.ownerName = "test";
 		
-		//this.app = new App();	
+		this.app = new App();	
 		this.battery = new Battery(100);
 		//this.msg = new Message();
 		//this.power = new Power();
@@ -52,6 +52,7 @@ public class SmartPhone {
 			{
 			case 1:
 				System.out.println("앱을 선택합니다.");
+				app.useMenu(sc);
 				break;
 			case 2:
 				System.out.println("메시지를 보냅니다");

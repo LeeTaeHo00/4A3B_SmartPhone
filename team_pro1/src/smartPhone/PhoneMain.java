@@ -50,7 +50,7 @@ public class PhoneMain {
 	void usePhone(Scanner sc) 
 	{
 		while(true) 
-		{
+		{ 
 			printPhoneArray();
 			int selectedMenu = sc.nextInt();
 			sc.nextLine();
@@ -139,5 +139,8 @@ public class PhoneMain {
 		System.out.printf("=\t%d.   종     료\t\t=\n", phones.length + 1);
 		System.out.println("=================================");
 	}
-
+	
 }
+
+
+
