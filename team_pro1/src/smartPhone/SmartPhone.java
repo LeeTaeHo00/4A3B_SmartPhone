@@ -11,7 +11,7 @@ public class SmartPhone {
 	//App app; //--> 만드는분
 	Battery battery;
 	//Message msg;
-	//Power power;
+	Power power;
 	
 	
 	// 생성자
