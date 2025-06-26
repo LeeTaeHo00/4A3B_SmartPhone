@@ -10,8 +10,7 @@ public class App {
 	public App() {				// 기본 생서자를 만들어 app에다가 배열 3개를 저장 하게 함
 		app = new String[3];
 	}
-
-		
+	
 	void useMenu(Scanner sc, SmartPhone phone) 						// 메뉴를 사용하기 위해 사용
 	{	
 		boolean checker = true;						// 와일문을 종료해줄 변수선언
@@ -19,7 +18,7 @@ public class App {
 		{
 			
 			// 메뉴뜨는거
-			showMenu();							
+			showMenu(phone);							
 			int chooseMenu = sc.nextInt();
 			sc.nextLine();
 			
@@ -96,16 +95,10 @@ public class App {
 		
 	}
 	
-
-
-
-	
-
-	
-	
-	void showMenu() // 설치인지 확인
+	void showMenu(SmartPhone phone) // 설치인지 확인
 	{
 		System.out.println("=================================");
+		phone.battery.printCurrentBattery();
 		System.out.println("=\t\t\t\t=");
 		System.out.println("=\t\t\t\t=");
 		System.out.println("=\t   1. 설   치\t\t=");

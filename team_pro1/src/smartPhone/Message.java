@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class Message {
 	// 필드
 	final int MAX_SAVE_MSG = 10;
-	String[] receiveMsg = new String[MAX_SAVE_MSG]; // 최대로 받을수 있는 메시지 = 10칸
+	//String[] receiveMsg = new String[MAX_SAVE_MSG]; // 최대로 받을수 있는 메시지 = 10칸
+	String receiveMsg = "";
 	boolean empty = true;
 
 	// 메소드
@@ -40,59 +41,60 @@ public class Message {
 	// 3. 최대메시지량이 넘어간다면(10칸)
 	// 4. 뒤에부터 빈칸(=삭제)으로 만들어준다.
 	void receiveMessage(SmartPhone myPhone, String msg) {
-		String temp = "";
-		
-		for (int i = 0; i < receiveMsg.length - 1; i++) 
-		{
-			myPhone.msg.receiveMsg[receiveMsg.length - 1] = "";
+		//String temp = "";
+		myPhone.msg.receiveMsg = msg;
+		//for (int i = 0; i < receiveMsg.length - 1; i++) 
+		//{
+			//myPhone.msg.receiveMsg[receiveMsg.length - 1] = "";
 			//empty = true;
-			if (!empty) 
-			{
-				temp = myPhone.msg.receiveMsg[i];
-				myPhone.msg.receiveMsg[i] = msg;
-				
-				if(myPhone.msg.receiveMsg[i + 1] == null) 
-				{
-					myPhone.msg.receiveMsg[i + 1] = temp;
-					break;
-				}
-				
-				if(i == receiveMsg.length - 1) 
-				{
-					myPhone.msg.receiveMsg[i] = msg;
-				}
-				
-				else 
-				{
-					temp = myPhone.msg.receiveMsg[i + 1];
-					myPhone.msg.receiveMsg[i] = msg;
-				}
-			} 
-			
-			else 
-			{
-				myPhone.msg.receiveMsg[i] = msg;
-				empty = false;
-				break;
-			}
-		}
+//			if (!empty) 
+//			{
+//				temp = myPhone.msg.receiveMsg[i];
+//				myPhone.msg.receiveMsg[i] = msg;
+//				
+//				//if(myPhone.msg.receiveMsg[i + 1] == null) 
+//				//{
+//				//	myPhone.msg.receiveMsg[i + 1] = temp;
+//				//	break;
+//				//}
+//				//
+//				//if(i == receiveMsg.length - 1) 
+//				//{
+//				//	myPhone.msg.receiveMsg[i] = msg;
+//				//}
+//				
+//				//else 
+//				//{
+//				//	temp = myPhone.msg.receiveMsg[i + 1];
+//				//	myPhone.msg.receiveMsg[i] = msg;
+//				//}
+//			} 
+//			
+//			else 
+//			{
+//				myPhone.msg.receiveMsg[i] = msg;
+//				empty = false;
+//				break;
+//			}
+		//}
 	}
 	
 	void printReceivedMessage() 
 	{
 		System.out.println("=================================");
-		for(int i = 0; i < this.receiveMsg.length; i++) 
-		{
-			if(this.receiveMsg[i] != null) 
-			{
-				System.out.println(this.receiveMsg[i]);
-			}
-			
-			else 
-			{
-				System.out.println("====");
-			}
-		}
+		System.out.println(this.receiveMsg);
+//		for(int i = 0; i < this.receiveMsg.length; i++) 
+//		{
+//			if(this.receiveMsg[i] != null) 
+//			{
+//				System.out.println(this.receiveMsg[i]);
+//			}
+//			
+//			else 
+//			{
+//				System.out.println("====");
+//			}
+//		}
 		System.out.println("=================================");
 	}
 	
@@ -100,7 +102,7 @@ public class Message {
 		boolean flag = true;
 		while(flag)
 		{
-			MessageMenu();
+			MessageMenu(myphone);
 			int choose = sc.nextInt();
 			sc.nextLine();
 			switch(choose) 
@@ -120,8 +122,9 @@ public class Message {
 		}
 	}
 
-	void MessageMenu() {
+	void MessageMenu(SmartPhone myphone) {
 		System.out.println("=================================");
+		myphone.battery.printCurrentBattery();
 		System.out.println("=\t\t\t\t=");
 		System.out.println("=\t\t\t\t=");
 		System.out.println("=\t   1. 보 내 기\t\t=");
