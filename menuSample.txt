@@ -1,0 +1,10 @@
+		System.out.println("=================================");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=\t   1. 폰 선 택\t\t=");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=\t   2. 종   료\t\t=");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=================================");
