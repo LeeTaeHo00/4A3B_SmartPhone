@@ -74,7 +74,7 @@ public class SmartPhone {
 				break;
 			}
 			
-			
+			if(checker == false) break;				
 			this.battery.useBattery(5);
 		}
 	}
