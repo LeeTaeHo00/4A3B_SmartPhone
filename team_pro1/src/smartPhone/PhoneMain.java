@@ -3,7 +3,7 @@ package smartPhone;
 import java.util.Scanner;
 
 public class PhoneMain {
-	static SmartPhone[] phones = new SmartPhone[10];
+	public static SmartPhone[] phones = new SmartPhone[10];
 
 	public static void main(String[] args) {
 		

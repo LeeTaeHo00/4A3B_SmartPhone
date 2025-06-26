@@ -56,7 +56,7 @@ public class SmartPhone {
 				break;
 			case 2:
 				System.out.println("메시지를 보냅니다");
-				msg.useMenu(sc);
+				msg.useMenu(sc,this);
 				break;
 			case 3:
 				System.out.println("배터리를 확인합니다");
