@@ -10,7 +10,7 @@ public class SmartPhone {
 	// 필드 (클래스 목록)
 	//App app; //--> 만드는분
 	Battery battery;
-	//Message msg;
+	Message msg;
 	Power power;
 	
 	
@@ -22,7 +22,7 @@ public class SmartPhone {
 		
 		//this.app = new App();	
 		this.battery = new Battery(100);
-		//this.msg = new Message();
+		this.msg = new Message();
 		//this.power = new Power();
 	}
 	
