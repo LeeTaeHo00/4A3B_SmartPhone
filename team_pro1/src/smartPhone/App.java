@@ -12,7 +12,7 @@ public class App {
 	}
 
 		
-	void useMenu(Scanner sc) 						// 메뉴를 사용하기 위해 사용
+	void useMenu(Scanner sc, SmartPhone phone) 						// 메뉴를 사용하기 위해 사용
 	{	
 		boolean checker = true;						// 와일문을 종료해줄 변수선언
 		while(true) 								// 와일문 시작
@@ -40,7 +40,13 @@ public class App {
 				break;
 			}
 			
-			
+			// 이부분 이태호가 설명할겁니다.
+			phone.battery.useBattery(10);
+			if(phone.power.checkPower(phone)) 
+			{
+				System.out.println("");
+				break;
+			}
 			if(checker == false) break;
 		}
 	}
@@ -83,6 +89,7 @@ public class App {
 		for (int i = 0; i < app.length; i++) {			//앙;
 			if (name.equals(app[i])) {
 				System.out.println(name + "앱을 실행했습니다. 배터리가 10% 줄어듭니다");
+				
 				break;
 			}
 		}
