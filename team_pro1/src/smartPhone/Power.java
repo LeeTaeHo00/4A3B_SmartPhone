@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class Power {
 	boolean powerOn = true;
 	
-	boolean checkPower(SmartPhone myphone) 
-	{		
+	static boolean checkPower(SmartPhone myphone) 
+	{
 		return myphone.battery.battery <= 0 ? false : true;
 	}
 	
 	void power(Scanner sc) 
 	{
+		printMenu();
 		if(powerOn == false) 
 		{
 			System.out.println("전원이 켜집니다");
@@ -23,7 +24,7 @@ public class Power {
 			int powerReset = sc.nextInt();
 			sc.nextLine();
 			
-			if(powerReset == 0)
+			if(powerReset == 1)
 			{
 				System.out.println("전원을 다시 시작합니다");
 			}

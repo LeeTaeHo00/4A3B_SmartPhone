@@ -21,7 +21,7 @@ public class SmartPhone {
 		this.ownerName = "test";
 		
 		this.app = new App();	
-		this.battery = new Battery(100);
+		this.battery = new Battery(50);
 		this.msg = new Message();
 		this.power = new Power();
 	}
@@ -45,7 +45,12 @@ public class SmartPhone {
 			int selectedMenu = sc.nextInt();
 			sc.nextLine();
 			
-			boolean checker = true;
+			boolean checker = Power.checkPower(this) ? true : false;
+			if(checker == false) 
+			{
+				System.out.println("배터리가 부족하여 핸드폰을 종료합니다.");
+				break;
+			}
 			
 			// 이곳에 각자의 기능들이 들어가게 됩니다.
 			switch(selectedMenu) 
@@ -65,12 +70,12 @@ public class SmartPhone {
 			case 4:
 				System.out.println("전원 설정을 엽니다.");
 				power.power(sc);
-				checker = false;
+				checker = power.powerOn ? true : false;
 				break;
 			}
 			
-			if(checker == false) break;
-			else this.battery.useBattery(5);
+			
+			this.battery.useBattery(5);
 		}
 	}
 	

@@ -13,10 +13,10 @@ public class App {
 	
 	void useMenu(Scanner sc, SmartPhone phone) 						// 메뉴를 사용하기 위해 사용
 	{	
-		boolean checker = true;						// 와일문을 종료해줄 변수선언
 		while(true) 								// 와일문 시작
 		{
-			
+			boolean checker = Power.checkPower(phone) ? true : false; // 와일문을 종료해줄 변수선언
+			if(checker == false) break;				
 			// 메뉴뜨는거
 			showMenu(phone);							
 			int chooseMenu = sc.nextInt();
@@ -29,24 +29,19 @@ public class App {
 				break;
 				
 			case 2:
-				runApp(sc);
+				runApp(sc, phone);
 				break;
 			case 3:
 				checker = false;
 				break;
 			default:
-				System.out.println("올바른 숫자를 입력하세요^^");				
+				System.out.println("올바른 숫자를 입력하세요^^");	
 				break;
 			}
 			
 			// 이부분 이태호가 설명할겁니다.
-			phone.battery.useBattery(10);
-			if(phone.power.checkPower(phone)) 
-			{
-				System.out.println("");
-				break;
-			}
 			if(checker == false) break;
+			phone.battery.useBattery(5);
 		}
 	}
 	
@@ -80,15 +75,16 @@ public class App {
 	}
 	
 	
-	void runApp(Scanner sc) 
+	void runApp(Scanner sc, SmartPhone phone) 
 	{
 		showInstallMenu();
+		System.out.println("앱 이름을 입력해주세요!");
 		name = sc.next();
 		// 앱을 실행
 		for (int i = 0; i < app.length; i++) {			//앙;
 			if (name.equals(app[i])) {
 				System.out.println(name + "앱을 실행했습니다. 배터리가 10% 줄어듭니다");
-				
+				phone.battery.useBattery(10);
 				break;
 			}
 		}
