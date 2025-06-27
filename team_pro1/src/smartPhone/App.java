@@ -39,7 +39,6 @@ public class App {
 				break;
 			}
 			
-			// 이부분 이태호가 설명할겁니다.
 			if(checker == false) break;
 			phone.battery.useBattery(5);
 		}
@@ -81,7 +80,7 @@ public class App {
 		System.out.println("앱 이름을 입력해주세요!");
 		name = sc.next();
 		// 앱을 실행
-		for (int i = 0; i < app.length; i++) {			//앙;
+		for (int i = 0; i < app.length; i++) {			
 			if (name.equals(app[i])) {
 				System.out.println(name + "앱을 실행했습니다. 배터리가 10% 줄어듭니다");
 				phone.battery.useBattery(10);
