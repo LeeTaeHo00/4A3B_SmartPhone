@@ -7,7 +7,6 @@ public class Message {
 	final int MAX_SAVE_MSG = 10;
 	String[] receiveMsg = new String[MAX_SAVE_MSG]; // 최대로 받을수 있는 메시지 = 10칸
 	//String receiveMsg = "";
-	boolean empty = true;
 
 	// 메소드
 
@@ -24,6 +23,7 @@ public class Message {
 		if (PhoneMain.phones[num] == null) {
 			System.out.println("없는 번호 입니다.");
 		} else {
+			System.out.println("메시지 입력");
 			String msg = sc.nextLine();
 			PhoneMain.phones[num].msg.receiveMessage(msg);
 			myPhone.battery.useBattery(10);
@@ -98,7 +98,9 @@ public class Message {
 			case 2:
 				printReceivedMessage();
 				break;
-				
+			case 3:
+				flag = false;
+				break;
 			default:
 				flag = false;
 				break;
@@ -114,7 +116,10 @@ public class Message {
 		System.out.println("=\t   1. 보 내 기\t\t=");
 		System.out.println("=\t\t\t\t=");
 		System.out.println("=\t\t\t\t=");
-		System.out.println("=\t   2. 메 시 지 확 인\t\t=");
+		System.out.println("=\t   2. 메 시 지 확 인\t=");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=\t\t\t\t=");
+		System.out.println("=\t   3. 뒤   로\t\t=");
 		System.out.println("=\t\t\t\t=");
 		System.out.println("=\t\t\t\t=");
 		System.out.println("=================================");
