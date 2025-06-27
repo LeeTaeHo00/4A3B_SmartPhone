@@ -26,8 +26,8 @@ public class Message {
 		} else {
 			String msg = sc.nextLine();
 			PhoneMain.phones[num].msg.receiveMessage(msg);
-			//myPhone.battery.useBattery(10);
-			//System.out.printf("메시지를 전송 완료했습니다 현재 배터리는 %d% 입니다", myPhone.battery);
+			myPhone.battery.useBattery(10);
+			System.out.printf("메시지를 전송 완료했습니다 현재 배터리는 %d%c 입니다\n", myPhone.battery.battery, '%');
 		}
 	}
 
@@ -67,7 +67,6 @@ public class Message {
 	void printReceivedMessage() 
 	{
 		System.out.println("=================================");
-//		System.out.println(this.receiveMsg);
 		for(int i = 0; i < this.receiveMsg.length; i++) 
 		{
 			if(this.receiveMsg[i] != null) 
